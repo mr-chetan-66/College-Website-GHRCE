@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments - GHRCE Nagpur</title>
+    <link rel="icon" href="logo.webp" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff4d4d;
+            --secondary-color: #ff8c1a;
+            --dark-color: #1a1a1a;
+        }
+
+        /* [Previous common styles remain the same] */
+
+        .dept-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dept-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dept-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .dept-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+        }
+
+        .dept-content {
+            padding: 1.5rem;
+        }
+
+        .dept-title {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .dept-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .dept-features {
+            margin: 1rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-icon {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        .dept-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .dept-btn {
+            flex: 1;
+            padding: 0.5rem;
+            text-align: center;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .dept-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .department-tabs {
+            margin-bottom: 2rem;
+        }
+
+        .nav-tabs .nav-link {
+            color: var(--dark-color);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .dept-card {
+                margin-bottom: 1.5rem;
+            }
+
+            .dept-image {
+                height: 150px;
+            }
+
+            .dept-stats {
+                flex-wrap: wrap;
+            }
+
+            .stat-item {
+                width: 50%;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- [Header and Navigation remain the same as home page] -->
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="display-4">Our Departments</h1>
+            <p class="lead">Nurturing Excellence in Engineering Education</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <ul class="nav nav-tabs department-tabs" id="departmentTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="ug-tab" data-bs-toggle="tab" href="#ug" role="tab">UG Programs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pg-tab" data-bs-toggle="tab" href="#pg" role="tab">PG Programs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="phd-tab" data-bs-toggle="tab" href="#phd" role="tab">Ph.D Programs</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="departmentTabContent">
+            <div class="tab-pane fade show active" id="ug" role="tabpanel">
+                <div class="row">
+                    <!-- Computer Science Department -->
+                    <div class="col-md-6">
+                        <div class="dept-card">
+                            <div class="dept-image" style="background-image: url('cse-2.png');">
+                            </div>
+                            <div class="dept-content">
+                                <h3 class="dept-title">Computer Science & Engineering</h3>
+                                <p>Fostering innovation and excellence in computing education and research.</p>
+                                
+                                <div class="dept-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">120</div>
+                                        <div class="stat-label">Intake</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">25</div>
+                                        <div class="stat-label">Faculty</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">8</div>
+                                        <div class="stat-label">Labs</div>
+                                    </div>
+                                </div>
+
+                                <div class="dept-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>AICTE Approved Curriculum</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Industry Collaboration</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Research Facilities</span>
+                                    </div>
+                                </div>
+
+                                <div class="dept-buttons">
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Department -->
+                    <div class="col-md-6">
+                        <div class="dept-card">
+                            <div class="dept-image" style="background-image: url('ai.png');">
+                            </div>
+                            <div class="dept-content">
+                                <h3 class="dept-title">Arificial Intelligence</h3>
+                                <p>Fostering innovation and excellence in AI education and research.</p>
+                                
+                                <div class="dept-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">120</div>
+                                        <div class="stat-label">Intake</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">20</div>
+                                        <div class="stat-label">Faculty</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">12</div>
+                                        <div class="stat-label">Labs</div>
+                                    </div>
+                                </div>
+
+                                <div class="dept-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>AICTE Approved Curriculum</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Industry Collaboration</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Research Facilities</span>
+                                    </div>
+                                </div>
+
+                                <div class="dept-buttons">
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DIC Department -->
+                    <div class="col-md-6">
+                        <div class="dept-card">
+                            <div class="dept-image" style="background-image: url('cyber.png');">
+                            </div>
+                            <div class="dept-content">
+                                <h3 class="dept-title">Data Science,IoT,Cyber Security</h3>
+                                <p>Fostering innovation and excellence in Data Science,IoT and Cyber Security education and research.</p>
+                                
+                                <div class="dept-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">180</div>
+                                        <div class="stat-label">Intake</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">30</div>
+                                        <div class="stat-label">Faculty</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">8</div>
+                                        <div class="stat-label">Labs</div>
+                                    </div>
+                                </div>
+
+                                <div class="dept-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>AICTE Approved Curriculum</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Industry Collaboration</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Research Facilities</span>
+                                    </div>
+                                </div>
+
+                                <div class="dept-buttons">
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mechanical Engineering Department -->
+                    <div class="col-md-6">
+                        <div class="dept-card">
+                            <div class="dept-image" style="background-image: url('mecha-engg.avif');">
+                            </div>
+                            <div class="dept-content">
+                                <h3 class="dept-title">Mechanical Engineering</h3>
+                                <p>Leading the way in mechanical systems and manufacturing excellence.</p>
+                                
+                                <div class="dept-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">120</div>
+                                        <div class="stat-label">Intake</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">22</div>
+                                        <div class="stat-label">Faculty</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">10</div>
+                                        <div class="stat-label">Labs</div>
+                                    </div>
+                                </div>
+
+                                <div class="dept-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>State-of-the-art Workshops</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Industry Projects</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Advanced Research Labs</span>
+                                    </div>
+                                </div>
+
+                                <div class="dept-buttons">
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Civil Engineering -->
+                    <div class="col-md-6">
+                        <div class="dept-card">
+                            <div class="dept-image" style="background-image: url('civil-engg.avif');">
+                            </div>
+                            <div class="dept-content">
+                                <h3 class="dept-title">Civil Engineering</h3>
+                                <p>Fostering innovation and excellence in Civil Engineering education and research.</p>
+                                
+                                <div class="dept-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">60</div>
+                                        <div class="stat-label">Intake</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">10</div>
+                                        <div class="stat-label">Faculty</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">3</div>
+                                        <div class="stat-label">Labs</div>
+                                    </div>
+                                </div>
+
+                                <div class="dept-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>AICTE Approved Curriculum</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Industry Collaboration</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Research Facilities</span>
+                                    </div>
+                                </div>
+
+                                <div class="dept-buttons">
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Electronics Engineering -->
+                    <div class="col-md-6">
+                        <div class="dept-card">
+                            <div class="dept-image" style="background-image: url('electrical.jpg');">
+                            </div>
+                            <div class="dept-content">
+                                <h3 class="dept-title">Electronics Engineering </h3>
+                                <p>Fostering innovation and excellence in Electronics Engineering  education and research.</p>
+                                
+                                <div class="dept-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">60</div>
+                                        <div class="stat-label">Intake</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">8</div>
+                                        <div class="stat-label">Faculty</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">4</div>
+                                        <div class="stat-label">Labs</div>
+                                    </div>
+                                </div>
+
+                                <div class="dept-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>AICTE Approved Curriculum</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Industry Collaboration</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle feature-icon"></i>
+                                        <span>Research Facilities</span>
+                                    </div>
+                                </div>
+
+                                <div class="dept-buttons">
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                    <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="pg" role="tabpanel">
+                <!-- PG Programs content -->
+                <!-- PG-MBA -->
+                <div class="col-md-6">
+                    <div class="dept-card">
+                        <div class="dept-image" style="background-image: url('mba.avif');">
+                        </div>
+                        <div class="dept-content">
+                            <h3 class="dept-title">MBA </h3>
+                            <p>Fostering innovation and excellence in Master of Business Adminitration education and research.</p>
+                            
+                            <div class="dept-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">60</div>
+                                    <div class="stat-label">Intake</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">8</div>
+                                    <div class="stat-label">Faculty</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">2</div>
+                                    <div class="stat-label">Labs</div>
+                                </div>
+                            </div>
+
+                            <div class="dept-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>AICTE Approved Curriculum</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Industry Collaboration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Research Facilities</span>
+                                </div>
+                            </div>
+
+                            <div class="dept-buttons">
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- M.Tech in VLSI -->
+                <div class="col-md-6">
+                    <div class="dept-card">
+                        <div class="dept-image" style="background-image: url('electro-&-tele.avif');">
+                        </div>
+                        <div class="dept-content">
+                            <h3 class="dept-title"> M.Tech in VLSI</h3>
+                            <p>Fostering innovation and excellence in VLSI  education and research.</p>
+                            
+                            <div class="dept-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">60</div>
+                                    <div class="stat-label">Intake</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">6</div>
+                                    <div class="stat-label">Faculty</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">1</div>
+                                    <div class="stat-label">Labs</div>
+                                </div>
+                            </div>
+
+                            <div class="dept-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>AICTE Approved Curriculum</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Industry Collaboration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Research Facilities</span>
+                                </div>
+                            </div>
+
+                            <div class="dept-buttons">
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- M.Tech in CAD/CAM Engineering -->
+                <div class="col-md-6">
+                    <div class="dept-card">
+                        <div class="dept-image" style="background-image: url('cad-cam.avif');">
+                        </div>
+                        <div class="dept-content">
+                            <h3 class="dept-title">M.Tech in CAD/CAM Engineering </h3>
+                            <p>Fostering innovation and excellence in CAD/CAM Engineering  education and research.</p>
+                            
+                            <div class="dept-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">60</div>
+                                    <div class="stat-label">Intake</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">4</div>
+                                    <div class="stat-label">Faculty</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">1</div>
+                                    <div class="stat-label">Labs</div>
+                                </div>
+                            </div>
+
+                            <div class="dept-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>AICTE Approved Curriculum</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Industry Collaboration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Research Facilities</span>
+                                </div>
+                            </div>
+
+                            <div class="dept-buttons">
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="phd" role="tabpanel">
+                <!-- Ph.D Programs content -->
+                 <!-- mech Engineering -->
+                 <div class="col-md-6">
+                    <div class="dept-card">
+                        <div class="dept-image" style="background-image: url('mecha-engg.avif');">
+                        </div>
+                        <div class="dept-content">
+                            <h3 class="dept-title">Ph.D in Mechanical Engineering </h3>
+                            <p>Fostering innovation and excellence in Mechanical Engineering  education and research.</p>
+                            
+                            <div class="dept-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">60</div>
+                                    <div class="stat-label">Intake</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">4</div>
+                                    <div class="stat-label">Faculty</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">4</div>
+                                    <div class="stat-label">Labs</div>
+                                </div>
+                            </div>
+
+                            <div class="dept-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>AICTE Approved Curriculum</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Industry Collaboration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Research Facilities</span>
+                                </div>
+                            </div>
+
+                            <div class="dept-buttons">
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Electronics Engineering -->
+                <div class="col-md-6">
+                    <div class="dept-card">
+                        <div class="dept-image" style="background-image: url('electrical.jpg');">
+                        </div>
+                        <div class="dept-content">
+                            <h3 class="dept-title">Ph.D in Electrical Engineering </h3>
+                            <p>Fostering innovation and excellence in Electronics Engineering  education and research.</p>
+                            
+                            <div class="dept-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">60</div>
+                                    <div class="stat-label">Intake</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">4</div>
+                                    <div class="stat-label">Faculty</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">4</div>
+                                    <div class="stat-label">Labs</div>
+                                </div>
+                            </div>
+
+                            <div class="dept-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>AICTE Approved Curriculum</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Industry Collaboration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Research Facilities</span>
+                                </div>
+                            </div>
+
+                            <div class="dept-buttons">
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ph.D in Computer Science Engineering -->
+                <div class="col-md-6">
+                    <div class="dept-card">
+                        <div class="dept-image" style="background-image: url('cse-2.png');">
+                        </div>
+                        <div class="dept-content">
+                            <h3 class="dept-title">Ph.D in Computer Science Engineering </h3>
+                            <p>Fostering innovation and excellence in Computer Science Engineering  education and research.</p>
+                            
+                            <div class="dept-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">60</div>
+                                    <div class="stat-label">Intake</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">8</div>
+                                    <div class="stat-label">Faculty</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">4</div>
+                                    <div class="stat-label">Labs</div>
+                                </div>
+                            </div>
+
+                            <div class="dept-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>AICTE Approved Curriculum</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Industry Collaboration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Research Facilities</span>
+                                </div>
+                            </div>
+
+                            <div class="dept-buttons">
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ph.D in civil -->
+                <div class="col-md-6">
+                    <div class="dept-card">
+                        <div class="dept-image" style="background-image: url('civil-engg.avif');">
+                        </div>
+                        <div class="dept-content">
+                            <h3 class="dept-title">Ph.D in Civil Engineering </h3>
+                            <p>Fostering innovation and excellence in ECivil Engineering  education and research.</p>
+                            
+                            <div class="dept-stats">
+                                <div class="stat-item">
+                                    <div class="stat-number">60</div>
+                                    <div class="stat-label">Intake</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">8</div>
+                                    <div class="stat-label">Faculty</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-number">4</div>
+                                    <div class="stat-label">Labs</div>
+                                </div>
+                            </div>
+
+                            <div class="dept-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>AICTE Approved Curriculum</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Industry Collaboration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle feature-icon"></i>
+                                    <span>Research Facilities</span>
+                                </div>
+                            </div>
+
+                            <div class="dept-buttons">
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-primary">Course Details</a>
+                                <a href="https://ghrce.raisoni.net/" target="_blank" class="dept-btn btn-outline">Faculty</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [Footer remains the same as home page] -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

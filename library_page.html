@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - GHRCE Nagpur</title>
+    <link rel="icon" href="logo.webp" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* [Previous CSS styles remain the same until the additions below] */
+        
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/300');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 0;
+            color: white;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stats-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .stats-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .facilities-list {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .facility-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .facility-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .facility-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+            min-width: 40px;
+        }
+
+        .timing-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timing-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .timing-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 2rem 0;
+            }
+            
+            .stats-card {
+                margin-bottom: 1rem;
+            }
+            
+            .stats-icon {
+                font-size: 2rem;
+            }
+            
+            .stats-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- [Header and Navigation remain the same as home page] -->
+
+    <div class="page-header">
+        <div class="container">
+            <h1 class="display-4">GHRCE Central Library</h1>
+            <p class="lead">A Gateway to Knowledge and Research Excellence</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-icon">
+                        <i class="fas fa-books"></i>
+                    </div>
+                    <div class="stats-number">5,000+</div>
+                    <div class="stats-label">Books</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="stats-number">100+</div>
+                    <div class="stats-label">Journals</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stats-number">1,000+</div>
+                    <div class="stats-label">Active Members</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card text-center">
+                    <div class="stats-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="stats-number">50+</div>
+                    <div class="stats-label">Digital Resources</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="facilities-list">
+                    <h3 class="mb-4">Library Facilities</h3>
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="facility-content">
+                            <h5>Digital Library Section</h5>
+                            <p>Access to online journals, e-books, and digital resources with high-speed internet connectivity.</p>
+                        </div>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <div class="facility-content">
+                            <h5>Reading Halls</h5>
+                            <p>Spacious air-conditioned reading halls with seating capacity of 300+ students.</p>
+                        </div>
+                    </div>
+                    <div class="facility-item">
+                        <div class="facility-icon">
+                            <i class="fas fa-print"></i>
+                        </div>
+                        <div class="facility-content">
+                            <h5>Reprographic Services</h5>
+                            <p>Printing, scanning, and photocopying facilities available at nominal charges.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="timing-card">
+                    <h3 class="mb-4">Library Timings</h3>
+                    <div class="timing-item">
+                        <span>Monday - Friday</span>
+                        <span>8:00 AM - 8:00 PM</span>
+                    </div>
+                    <div class="timing-item">
+                        <span>Saturday</span>
+                        <span>9:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="timing-item">
+                        <span>Sunday</span>
+                        <span>Closed</span>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h4>Online Resources</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check-circle me-2"></i>IEEE Digital Library</li>
+                        <li><i class="fas fa-check-circle me-2"></i>NPTEL Video Lectures</li>
+                        <li><i class="fas fa-check-circle me-2"></i>E-Journals Access</li>
+                        <li><i class="fas fa-check-circle me-2"></i>Digital Repository</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [Footer remains the same as home page] -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

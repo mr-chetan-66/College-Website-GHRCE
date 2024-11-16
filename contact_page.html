@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GHRCE</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #003366;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #002244;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .departments {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .department {
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #003366;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #002244;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>G.H. Raisoni College of Engineering, Nagpur</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h2>Send us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" name="department">
+                            <option value="">Select Department</option>
+                            <option value="computerscience">Computer Science</option>
+                            <option value="electrical">Electrical Engineering</option>
+                            <option value="mechanical">Mechanical Engineering</option>
+                            <option value="civil">Civil Engineering</option>
+                            <option value="electronics">Electronics & Communication</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.449286681809!2d79.05189731493447!3d21.176006985918144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1a8970c08b9%3A0x4b1c34f366e79e3a!2sG.H.%20Raisoni%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1647940434569!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="departments">
+            <h2>Department Contact Information</h2>
+            <div class="department">
+                <h3>Computer Science Department</h3>
+                <p>Email: cs@ghrce.raisoni.net</p>
+                <p>Phone: +91-XXX-XXX-XXXX</p>
+            </div>
+            <div class="department">
+                <h3>Electrical Engineering Department</h3>
+                <p>Email: ee@ghrce.raisoni.net</p>
+                <p>Phone: +91-XXX-XXX-XXXX</p>
+            </div>
+            <div class="department">
+                <h3>Mechanical Engineering Department</h3>
+                <p>Email: me@ghrce.raisoni.net</p>
+                <p>Phone: +91-XXX-XXX-XXXX</p>
+            </div>
+            <div class="department">
+                <h3>Civil Engineering Department</h3>
+                <p>Email: ce@ghrce.raisoni.net</p>
+                <p>Phone: +91-XXX-XXX-XXXX</p>
+            </div>
+            <div class="department">
+                <h3>Electronics & Communication Department</h3>
+                <p>Email: ec@ghrce.raisoni.net</p>
+                <p>Phone: +91-XXX-XXX-XXXX</p>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <h2>Connect With Us</h2>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
